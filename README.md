@@ -64,6 +64,7 @@ uv pip install -r requirements.txt
  ```
 
 ## 🗂 Project Structure
+ ```bash 
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -73,6 +74,7 @@ uv pip install -r requirements.txt
 ├── requirements.txt
 ├── environment.yml
 └── README.md
+ ```
 
 ## 📊 Analysis & Modeling
 
