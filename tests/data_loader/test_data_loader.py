@@ -17,7 +17,7 @@ def data_loader():
     [
         pytest.param("test.csv", "_csv_data", id="csv"),
         pytest.param("test.parquet", "_parquet_data", id="parquet"),
-        pytest.param("test_empty.csv", "empty_dataset", id="empty_csv")
+        pytest.param("test_empty.csv", "empty_dataset", id="empty_csv"),
     ],
 )
 def test_load_data_with_valid_file(
@@ -25,15 +25,15 @@ def test_load_data_with_valid_file(
 ):
     file_path = test_datasets_path / file_name
     expected_df = request.getfixturevalue(expected_data)
-    
+
     if expected_df.empty:
         with pytest.raises(ValueError, match="Error loading data: File is empty."):
-             data = data_loader.load_data(file_path)
-             assert isinstance(data, pd.DataFrame)
+            data = data_loader.load_data(file_path)
+            assert isinstance(data, pd.DataFrame)
     else:
-         data = data_loader.load_data(file_path)
-         assert isinstance(data, pd.DataFrame)
-         pd.testing.assert_frame_equal(data, expected_df)
+        data = data_loader.load_data(file_path)
+        assert isinstance(data, pd.DataFrame)
+        pd.testing.assert_frame_equal(data, expected_df)
 
 
 # Method Test - 1- Expected Value

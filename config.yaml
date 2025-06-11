@@ -1,0 +1,14 @@
+features:
+  numerical:
+    - age
+    - salary
+  categorical:
+    - city
+steps:
+    categorical:
+       imputer: SimpleImputer
+       encoder: OneHotEncoder
+    numerical:
+       imputer: SimpleImputer
+       scaler: StandardScaler
+
